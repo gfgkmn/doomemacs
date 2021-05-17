@@ -115,7 +115,7 @@ results buffer.")
 (use-package! ivy-rich
   :after ivy
   :config
-  (setq ivy-rich-parse-remote-buffer nil)
+  (setq ivy-rich-parse-remote-buffer t)
 
   (when (featurep! +icons)
     (cl-pushnew '(+ivy-rich-buffer-icon)

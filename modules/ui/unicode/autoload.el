@@ -18,6 +18,8 @@ necessary."
 If doom-unicode-font is set, add it as preferred font for all unicode blocks."
   (when (and frame (display-graphic-p frame))
     (with-selected-frame frame
+
+      (setq doom-unicode-font (font-spec :family "FZXingKai-S04" :size 19.5))
       (require 'unicode-fonts)
       (when doom-unicode-font
         (let ((doom-unicode-font-family (plist-get (font-face-attributes doom-unicode-font) :family)))

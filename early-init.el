@@ -7,6 +7,10 @@
 ;; threshold to temporarily prevent it from running, then reset it later by
 ;; enabling `gcmh-mode'. Not resetting it will cause stuttering/freezes.
 (setq gc-cons-threshold most-positive-fixnum)
+;; 看起来, 每一个自己可以借鉴的地方出现在这里, 在这里, 你可以使用
+;; gc-cons-threshold来和之后的gcmh-mode来进行加速
+
+(setenv "LIBRARY_PATH" "/usr/local/opt/gcc/lib/gcc/10:/usr/local/opt/libgccjit/lib/gcc/10:/usr/local/opt/gcc/lib/gcc/10/gcc/x86_64-apple-darwin20/10.2.0")
 
 ;; Prevent unwanted runtime compilation for gccemacs (native-comp) users;
 ;; packages are compiled ahead-of-time when they are installed and site files
@@ -20,6 +24,7 @@
 ;; prevent the use of stale byte-code. Otherwise, it saves us a little IO time
 ;; to skip the mtime checks on every *.elc file.
 (setq load-prefer-newer noninteractive)
+;; tocreate: 这个是什么意思, 什么叫还有noninteractive session.
 
 ;; In Emacs 27+, package initialization occurs before `user-init-file' is
 ;; loaded, but after `early-init-file'. Doom handles package initialization, so
@@ -48,5 +53,12 @@
 ;; Ensure Doom is running out of this file's directory
 (setq user-emacs-directory (file-name-directory load-file-name))
 
+(tool-bar-mode -1)
+;; ;; already disable by emacs-mac compile
+(scroll-bar-mode -1)
+(menu-bar-mode -1)
+
 ;; Load the heart of Doom Emacs
 (load (concat user-emacs-directory "core/core") nil 'nomessage)
+(setq initial-frame-alist '((top . 120) (left . 210) (width . 200) (height . 53)))
+

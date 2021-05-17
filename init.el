@@ -32,9 +32,11 @@
 (unless (boundp 'doom-version)
   (load (concat (file-name-directory load-file-name) "early-init")
         nil t))
+;; 如果存在doom-version这样的变量, 那么就加载early-init
 
 ;; Ensure Doom's core libraries are properly initialized, autoloads file is
 ;; loaded, and hooks set up for an interactive session.
+
 (doom-initialize)
 
 ;; Now we load all enabled modules in the order dictated by your `doom!' block

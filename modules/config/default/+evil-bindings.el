@@ -16,10 +16,12 @@
     "C-a"    #'move-beginning-of-line
     "C-r"    #'evil-paste-from-register
     "C-u"    #'evil-delete-back-to-indentation
-    "C-v"    #'yank
+    ;; define by gfgkmn
+    ;; "C-v"    #'yank
     "C-w"    #'doom/delete-backward-word
     "C-z"    (cmd! (ignore-errors (call-interactively #'undo))))
 
+  ;; define by gfgkmn
   ;; (define-key! :keymaps +default-minibuffer-maps
   ;;   "C-j"    #'next-line
   ;;   "C-k"    #'previous-line
@@ -158,8 +160,9 @@
        (:after ivy
         :map ivy-minibuffer-map
         "C-SPC" #'ivy-call-and-recenter  ; preview file
-        "C-l"   #'ivy-alt-done
-        "C-v"   #'yank)
+        "C-l"   #'ivy-alt-done)
+        ;; define by gfgkmn
+        ;; "C-v"   #'yank)
        (:after counsel
         :map counsel-ag-map
         "C-SPC"    #'ivy-call-and-recenter ; preview

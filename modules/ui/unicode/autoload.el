@@ -19,6 +19,7 @@ If doom-unicode-font is set, add it as preferred font for all unicode blocks."
   (when (and frame (display-graphic-p frame))
     (with-selected-frame frame
 
+      ;; define by gfgkmn
       (setq doom-unicode-font (font-spec :family "FZXingKai-S04" :size 19.5))
       (require 'unicode-fonts)
       (when doom-unicode-font

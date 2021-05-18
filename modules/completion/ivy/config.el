@@ -115,6 +115,7 @@ results buffer.")
 (use-package! ivy-rich
   :after ivy
   :config
+  ;; define by gfgkmn
   (setq ivy-rich-parse-remote-buffer t)
 
   (when (featurep! +icons)
